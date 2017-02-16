@@ -55,7 +55,7 @@ function initDatabase (args, done) {
 
     async.series([
         function (done) {
-            var options = args.config.mysql||args.config.pg||args.config.sqlite;
+            var options = args.config.mysql||args.config.pg||args.config.sqlite||args.config.mssql;
             client.connect(options, function (err) {
                 if (err) return done(err);
                 var x = new Xsql({
